@@ -33,12 +33,29 @@ if (lowerCase === false && upperCase === false && numberCase === false && specia
 }
 
 if (lowerCase === true) {
-  for (var passwordLength = 0; index < lowercase.length; index++) {
-    const element = array[index];
+  for (var passwordLength = 0; passwordLength < lowercase.length; index++) {
+    result += lowercase.charAt(Math.floor(math.random() * lowercaseLength));
     
   }
 }
+if (upperCase === true) {
+  for (var passwordLength = 0; passwordLength < uppercase.length; index++) {
+    result += uppercase.charAt(Math.floor(math.random() * uppercaseLength));
 
+}
+}
+if (numberCase === true) {
+  for (var passwordLength = 0; passwordLength < number.length; index++) {
+    result += number.charAt(Math.floor(math.random() * numberLength));
+
+}
+}
+if (specialCase === true) {
+  for (var passwordLength = 0; passwordLength < special.length; index++) {
+    result += special.charAt(Math.floor(math.random() * specialLength));
+
+}
+}
 }
 
 
@@ -48,6 +65,11 @@ generateBtn.addEventListener("click", writePassword);
 
 
 var lowercase = "abcdefghijklmnopqrstuvwxyz"
+var lowercaseLength = lowercase.length;
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var uppercaseLength = uppercase.length;
 var number = "0123456789";
-var symbol = "*;<>()[]{}#$?!^|";
+var numberLength = number.length;
+var special = "*;<>()[]{}#$?!^|";
+var specialLength = symbol.length;
+var result = "";
