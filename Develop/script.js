@@ -1,14 +1,15 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var result = "";
 
 // Writes password to the #password input
 function writePassword() {
-  var password = generatePassword()
+  var password = generatePassword(result)
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 };
 
-function generatePassword() {
+function generatePassword(result) {
   var passwordLength = prompt("How long would you like your password to be? (>8 or <128 characters)");
  // 
   if (passwordLength > 8 && passwordLength < 128) {
@@ -34,25 +35,25 @@ if (lowerCase === false && upperCase === false && numberCase === false && specia
 
 if (lowerCase === true) {
   for (var passwordLength = 0; passwordLength < lowercase.length; index++) {
-    result += lowercase.charAt(Math.floor(math.random() * lowercaseLength));
+    result += lowercase.charAt(Math.floor(Math.random() * lowercaseLength));
     
   }
 }
 if (upperCase === true) {
   for (var passwordLength = 0; passwordLength < uppercase.length; index++) {
-    result += uppercase.charAt(Math.floor(math.random() * uppercaseLength));
+    result += uppercase.charAt(Math.floor(Math.random() * uppercaseLength));
 
 }
 }
 if (numberCase === true) {
   for (var passwordLength = 0; passwordLength < number.length; index++) {
-    result += number.charAt(Math.floor(math.random() * numberLength));
+    result += number.charAt(Math.floor(Math.random() * numberLength));
 
 }
 }
 if (specialCase === true) {
   for (var passwordLength = 0; passwordLength < special.length; index++) {
-    result += special.charAt(Math.floor(math.random() * specialLength));
+    result += special.charAt(Math.floor(Math.random() * specialLength));
 
 }
 }
@@ -71,5 +72,7 @@ var uppercaseLength = uppercase.length;
 var number = "0123456789";
 var numberLength = number.length;
 var special = "*;<>()[]{}#$?!^|";
-var specialLength = symbol.length;
-var result = "";
+var specialLength = special.length;
+
+
+console.log(result);
