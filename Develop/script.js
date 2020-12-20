@@ -1,10 +1,8 @@
-// Assignment Code
 var generateBtn = document.querySelector('#generate');
 var allCharacters =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=[]{}|.`:;<'>?";
 var passwordLength = '';
 
-// Writes password to the #password input
 function generatePassword(randomPassword) {
   var results = '';
   randomPassword, passwordLength;
@@ -12,19 +10,20 @@ function generatePassword(randomPassword) {
     results += passwordLength.charAt(
       Math.floor(Math.random() * passwordLength.length)
     );
+
+    console.log(results);
   }
-  console.log(results);
   return results;
 }
 
 function writePassword() {
-  passwordLength = "";
-  var passwordLength = parseInt(
+  passwordLength = '';
+  var input = parseInt(
     prompt(
       'How long would you like your password to be? (>8 or <128 characters)'
     )
   );
-  if (passwordLength >= 8 && passwordLength <= 128) {
+  if (userInput >= 8 && userInput <= 128) {
     var lowerCase = confirm(
       'Do you want your password to contain lower case characters?'
     );
@@ -35,10 +34,10 @@ function writePassword() {
     var specialCase = confirm(
       'Do you want your password to contain special characters?'
     );
-  } else if (passwordLength === null) {
+  } else if (userInput === null) {
     alert('Please enter a password length');
     return;
-  } else if (passwordLength < 8 || passwordLength > 128) {
+  } else if (userInput < 8 || userInput > 128) {
     alert('Please pick a number between 8 and 128');
     return;
   }
@@ -51,23 +50,21 @@ function writePassword() {
     alert('Please select at least one option');
     return;
   }
-  if (lowerCase) {
+  if (lowerCase === true) {
     passwordLength += allCharacters.substring(0, 26);
   }
-  if (upperCase) {
+  if (upperCase === true) {
     passwordLength += allCharacters.substring(26, 52);
   }
-  if (numberCase) {
+  if (numberCase === true) {
     passwordLength += allCharacters.substring(52, 62);
   }
-  if (specialCase) {
+  if (specialCase === true) {
     passwordLength += allCharacters.substring(62);
   }
-  var password = generatePassword(passwordLength);
+  var password = generatePassword(userInput);
   var passwordText = document.querySelector('#password');
   passwordText.value = password;
-  console.log(passwordLength);
 }
 
-// Add event listener to generate button1
 generateBtn.addEventListener('click', writePassword);
