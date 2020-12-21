@@ -30,7 +30,7 @@ function writePassword() {
     var upperCase = confirm(
       'Do you want your password to contain upper case characters?'
     );
-    var numberCase = confirm('Do you want your passowrd to contain numbers?');
+    var numberCase = confirm('Do you want your password to contain numbers?');
     var specialCase = confirm(
       'Do you want your password to contain special characters?'
     );
