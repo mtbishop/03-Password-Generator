@@ -41,17 +41,7 @@ function writePassword() {
   } else if (userInput < 8 || userInput > 128) {
     alert('Please pick a number between 8 and 128');
     return;
-  }
-  // if the user says cancel/no to all prompts
-  if (
-    lowerCase === false &&
-    upperCase === false &&
-    numberCase === false &&
-    specialCase === false
-  ) {
-    alert('Please select at least one option');
-    return;
-  }
+  } 
   //if they choose "Confirm" for lower case letters to be in their password
   if (lowerCase) {
     passwordLength += allCharacters.substring(0, 26);
@@ -67,6 +57,11 @@ function writePassword() {
   //if they choose "Confirm" for special characters to be in their password
   if (specialCase) {
     passwordLength += allCharacters.substring(62);
+  }
+    // if the user says cancel/no to all prompts
+  else {
+    alert('Please select at least one option');
+    return;
   }
   // this links the user input to the id that displays the password to the user
   var password = generatePassword(userInput);
