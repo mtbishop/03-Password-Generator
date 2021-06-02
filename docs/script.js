@@ -165,6 +165,13 @@ function writePassword() {
     return passwordString;
   }
 }
+function copyPassword() {
+  var copyText = document.getElementById('password');
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand('copy');
+  alert('Copied your password');
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
