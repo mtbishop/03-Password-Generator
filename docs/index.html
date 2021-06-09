@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Password Generator</title>
   <link rel="stylesheet" href="style.css" />
@@ -12,7 +14,6 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1>Password Generator</h1>
     </header>
     <div class="card">
       <div class="card-header">
@@ -21,9 +22,29 @@
       <div class="card-body">
         <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
       </div>
+      <div id="toggles">
+
+        <input type="range" min="8" max="128" id="passLengthInput" placeholder="8-128 Characters">
+        <div id="lowerCaseCheckBox">
+          <input type="checkbox" class="checkboxes" id="allowLowerCase" name="allowLowerCase" checked>
+          <label for="allowLowerCase">Lower Case</label>
+        </div>
+        <div id="upperCaseCheckBox">
+          <input type="checkbox" class="checkboxes" id="allowUpperCase" name="allowUpperCase" unchecked>
+          <label for="allowUpperCase">Capitalization</label>
+        </div>
+        <div id="numberCheckBox">
+          <input type="checkbox" class="checkboxes" id="allowNumbers" name="allowNumbers" unchecked>
+          <label for="allowNumbers">Numbers</label>
+        </div>
+        <div id="specialCaseCheckBox">
+          <input type="checkbox" class="checkboxes" id="allowSpecialCase" name="allowSpecialCase" unchecked>
+          <label for="allowSpecialCase">Special Characters</label>
+        </div>
+      </div>
       <div class="card-footer">
-        <button id="generate" class="btn">Generate Password</button>
-        <button id="copyPass" onclick="copyPassword()" class="btn">Copy</button>
+        <button id="generate" class="btn">Generate</button>
+        <p id="copyPass" onclick="copyPassword()">📄 Copy</p>
       </div>
     </div>
   </div>
